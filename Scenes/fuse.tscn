@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://clvutx65yjrv"]
+
+[ext_resource type="Script" uid="uid://brjb4dsqm0d77" path="res://Scenes/fuse.gd" id="1_mg4mk"]
+[ext_resource type="Texture2D" uid="uid://bhxahwmtdry0p" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile000.png" id="2_4bsea"]
+[ext_resource type="Texture2D" uid="uid://cygp82njtrq0q" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile001.png" id="3_psypi"]
+[ext_resource type="Texture2D" uid="uid://ds16dafsf8atb" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile002.png" id="4_udy15"]
+[ext_resource type="Texture2D" uid="uid://ck2pl5nmybrcp" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile003.png" id="5_pkl33"]
+[ext_resource type="Texture2D" uid="uid://bihqh0qotmlvj" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile004.png" id="6_ofh4f"]
+[ext_resource type="Texture2D" uid="uid://cntblb2u6wiuv" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile005.png" id="7_llopg"]
+[ext_resource type="Texture2D" uid="uid://b3wdsnn1dh7et" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile006.png" id="8_bb54u"]
+[ext_resource type="Texture2D" uid="uid://cmv8megnge23a" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile007.png" id="9_5rvl3"]
+[ext_resource type="Texture2D" uid="uid://cd7qwdsqwhmgs" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile008.png" id="10_q12p3"]
+[ext_resource type="Texture2D" uid="uid://bp1eh8t8u5owm" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile009.png" id="11_tmmf6"]
+[ext_resource type="Texture2D" uid="uid://bk5n72wt0uxcd" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile010.png" id="12_7ulgr"]
+[ext_resource type="Texture2D" uid="uid://c3nre0f5qjhdk" path="res://sprites/PickUps/Individual_PNGs/access_card_item/tile011.png" id="13_5dbo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a15"]
+size = Vector2(20, 30)
+
+[sub_resource type="GDScript" id="GDScript_73onb"]
+script/source = "extends ColorRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7a15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4bsea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_psypi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_udy15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pkl33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ofh4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_llopg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bb54u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5rvl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q12p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tmmf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7ulgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5dbo2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_newya"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y7a15"]
+gradient = SubResource("Gradient_newya")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="fuse" type="Area2D" unique_id=1221277564]
+script = ExtResource("1_mg4mk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=555357484]
+shape = SubResource("RectangleShape2D_y7a15")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1961981524]
+visible = false
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = 15.0
+color = Color(1, 1, 0, 1)
+script = SubResource("GDScript_73onb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1055398076]
+scale = Vector2(2.05, 2.05)
+sprite_frames = SubResource("SpriteFrames_y7a15")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1701554627]
+texture = SubResource("GradientTexture2D_y7a15")

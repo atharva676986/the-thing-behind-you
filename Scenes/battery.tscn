@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://paqmoss5evhj"]
+
+[ext_resource type="Script" uid="uid://j0jyblju0g8u" path="res://battery.gd" id="1_mjabg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a15"]
+size = Vector2(20, 30)
+
+[node name="Battery" type="Area2D" unique_id=1903090959]
+script = ExtResource("1_mjabg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110510215]
+shape = SubResource("RectangleShape2D_y7a15")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=149148783]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = 15.0
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1609972576]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 8.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect" unique_id=1221768195]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 16.0
+offset_bottom = 13.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect" unique_id=1720457738]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 16.0
+offset_bottom = 13.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect/ColorRect" unique_id=1652627086]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 16.0
+offset_bottom = 13.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/ColorRect/ColorRect/ColorRect/ColorRect" unique_id=250661002]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -27.0
+offset_right = 15.0
+offset_bottom = -21.0
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect/ColorRect/ColorRect" unique_id=860581249]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -26.0
+offset_right = 14.0
+offset_bottom = -22.0

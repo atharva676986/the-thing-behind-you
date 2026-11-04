@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bw7wke3675tff"]
+
+[ext_resource type="Script" uid="uid://cey3l2yru8e8" path="res://Scenes/title.gd" id="1_w31pl"]
+[ext_resource type="Script" uid="uid://8s32fcrtxxxf" path="res://Scenes/label.gd" id="2_ekrfg"]
+
+[sub_resource type="Gradient" id="Gradient_w31pl"]
+offsets = PackedFloat32Array(0, 0.990566)
+colors = PackedColorArray(0.19489282, 2.8126408e-07, 2.4065375e-08, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ogw87"]
+gradient = SubResource("Gradient_w31pl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Title" type="Control" unique_id=1505728615]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w31pl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1458616462]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ogw87")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=323558866]
+layout_mode = 0
+offset_left = 137.84
+offset_top = 130.56
+offset_right = 546.84045
+offset_bottom = 183.56
+theme_override_font_sizes/font_size = 38
+text = "ThE ThIng BEhiNd YOu"
+script = ExtResource("2_ekrfg")
+
+[node name="Button" type="Button" parent="." unique_id=1235715422]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 300.0
+offset_right = 299.99847
+offset_bottom = 350.0
+text = "Play"

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dm2lfii4ja50u"]
+
+[ext_resource type="Script" uid="uid://wtohl8glivwn" path="res://Scenes/ghost.gd" id="1_3mxmt"]
+[ext_resource type="Texture2D" uid="uid://cri06y1g8irxf" path="res://sprites/ghost/attack2_0.png" id="2_bacfh"]
+[ext_resource type="Texture2D" uid="uid://c2nermxv6aelg" path="res://sprites/ghost/walk_0.png" id="2_st3at"]
+[ext_resource type="Texture2D" uid="uid://vbqm0y0d0tga" path="res://sprites/ghost/run_0.png" id="2_vvq3t"]
+[ext_resource type="Texture2D" uid="uid://bsvns1wydowlc" path="res://sprites/ghost/walk_1.png" id="3_7hbae"]
+[ext_resource type="Texture2D" uid="uid://bay57q4imtgu6" path="res://sprites/ghost/attack2_1.png" id="3_gu7qg"]
+[ext_resource type="Texture2D" uid="uid://b0rnhboyuf3up" path="res://sprites/ghost/run_1.png" id="3_jugkf"]
+[ext_resource type="Texture2D" uid="uid://cscjg3u1daclu" path="res://sprites/ghost/run_2.png" id="4_dlvam"]
+[ext_resource type="Texture2D" uid="uid://cis3n5xbh3hpl" path="res://sprites/ghost/attack2_2.png" id="4_p4wdi"]
+[ext_resource type="Texture2D" uid="uid://03vrkc8e242c" path="res://sprites/ghost/walk_2.png" id="4_xoekh"]
+[ext_resource type="Texture2D" uid="uid://cflb8hiyhhwas" path="res://sprites/ghost/run_3.png" id="5_8t7of"]
+[ext_resource type="Texture2D" uid="uid://wfqo63er35wh" path="res://sprites/ghost/walk_3.png" id="5_vdkt2"]
+[ext_resource type="Texture2D" uid="uid://drwkhbh41eekq" path="res://sprites/ghost/attack2_3.png" id="5_w60pv"]
+[ext_resource type="Texture2D" uid="uid://gr7yx56vx6a" path="res://sprites/ghost/run_4.png" id="6_bacfh"]
+[ext_resource type="Texture2D" uid="uid://cxf4jb8a1p8jp" path="res://sprites/ghost/walk_4.png" id="6_prwv0"]
+[ext_resource type="Texture2D" uid="uid://biadtetp4v6n2" path="res://sprites/ghost/walk_5.png" id="7_ax0xk"]
+[ext_resource type="Texture2D" uid="uid://c54kei77xfbiw" path="res://sprites/ghost/run_5.png" id="7_gu7qg"]
+[ext_resource type="Texture2D" uid="uid://c1sgetvlphhpr" path="res://sprites/ghost/run_6.png" id="8_p4wdi"]
+[ext_resource type="Texture2D" uid="uid://wexbgifufp25" path="res://sprites/ghost/walk_6.png" id="8_pe55a"]
+[ext_resource type="Script" uid="uid://dicfum2a1s23v" path="res://Scenes/ghost_light.gd" id="20_gu7qg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a15"]
+size = Vector2(40, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7a15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bacfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gu7qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p4wdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w60pv")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vvq3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jugkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dlvam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8t7of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bacfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gu7qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p4wdi")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_st3at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7hbae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xoekh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vdkt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_prwv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ax0xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pe55a")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ogw87"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p4wdi"]
+gradient = SubResource("Gradient_ogw87")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Ghost" type="Area2D" unique_id=1122024424]
+script = ExtResource("1_3mxmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=553821380]
+shape = SubResource("RectangleShape2D_y7a15")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1512169393]
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_y7a15")
+animation = &"attack"
+autoplay = "walk"
+frame = 3
+frame_progress = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=221827025]
+color = Color(0.6452906, 0, 0.017263826, 1)
+energy = 0.6
+texture = SubResource("GradientTexture2D_p4wdi")
+texture_scale = 2.0
+script = ExtResource("20_gu7qg")
